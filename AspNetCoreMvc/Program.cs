@@ -24,6 +24,8 @@ namespace Sentry.Samples.AspNetCore.Mvc
                     // That includes 'appsettings.json', environment variables and anything else defined on the ConfigurationBuilder.
                     // See: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration
 
+                    o.Dsn = "https://d120e2470eb24ae4bb36db9a22f6b452@sentry.io/1298448";
+
                     // Tracks the release which sent the event and enables more features: https://docs.sentry.io/learn/releases/
                     // If not explicitly set here, the SDK attempts to read it from: AssemblyInformationalVersionAttribute and AssemblyVersion
                     // TeamCity: %build.vcs.number%, VSTS: BUILD_SOURCEVERSION, Travis-CI: TRAVIS_COMMIT, AppVeyor: APPVEYOR_REPO_COMMIT, CircleCI: CIRCLE_SHA1
