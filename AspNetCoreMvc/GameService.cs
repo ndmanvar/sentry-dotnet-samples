@@ -16,10 +16,10 @@ namespace Sentry.Samples.AspNetCore.Mvc
         {
             _gameLogger.LogInformation("Fetching dungeons and mana level in parallel.");
 
-            var getDungeonsTask = Task.Run(new Func<int>(() => throw new HttpRequestException("Failed to fetch available Dungeons")));
+            var getDungeons = Task.Run(new Func<int>(() => throw new HttpRequestException("Failed to fetch available Dungeons")));
             var getUserMana = Task.Run(new Func<int>(() => throw new DataException("Invalid Mana level: -10")));
 
-            var whenAll = Task.WhenAll(getDungeonsTask, getUserMana);
+            var whenAll = Task.WhenAll(getDungeons, getUserMana);
             try
             {
                 var ids = await whenAll;
